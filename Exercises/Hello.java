@@ -5,21 +5,45 @@ public class Hello {
     public static boolean isChanged = false;
     static int a = 10;
     static int b = 20;
+    static int prog = 20;
     public static Scanner myMoneyScanner = new Scanner(System.in);
+    public static Scanner helloProgScanner = new Scanner(System.in);
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
+    while (true) 
+     {
+        helloFunction();
+    }
+     
+       
+    }
 
+private static void helloFunction() {
+    System.out.println("=====================================================");
+    System.out.println("Hello, please choose which program do u want to run!");
+    System.out.println("1) Draw a rectangle");
+    System.out.println("2) Switch variables 10 and 20");
+    System.out.println("3) Exchange money from BRL to SEK");
+    System.out.println("=====================================================");
+    int choosedValue = helloProgScanner.nextInt();
+
+    switch (choosedValue) {
+        case 1:
         drawRectangle();
-        var bla = switchVariables(a, b);
-
-        System.out.println(bla);
-
-    exchangeMoney();
-  
-        
+            break;
+        case 2:
+        switchVariables(a, b); 
+            break;
+        case 3:
+        exchangeMoney();   
+            break;
     
-
+        default: System.out.println("You entered wrong number! Choose from 1 to 3!");
+       // helloFunction();
+            break;
+    }
 }
 
 private static void drawRectangle() {
@@ -29,25 +53,13 @@ private static void drawRectangle() {
     System.out.println("xxxxx");
 }
 
-private static String switchVariables(int i, int n) {
-   
+private static void switchVariables(int i, int n) {
+
     int x = i;
-    int y = n; 
-    if (isChanged == false) {
-        x = i;
-        y = n; 
-        isChanged = true;
-     
-    } else {
-        x = n;
-        y = i;   
-       isChanged = false;
+        i = n; 
+    int z = x;
 
-    } 
-  
-    //isChanged = !isChanged;
-
- return (" A = " + x + " B = " + y);
+    System.out.println(" A = " + i + " B = " + z);
 	
 };
 
